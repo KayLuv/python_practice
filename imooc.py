@@ -13,7 +13,8 @@ class CourseCrawler:
             brief = tree.xpath('//div[@class="course-brief"]/p/text()')[0]
             satisfaction = tree.xpath('//div[@class="satisfaction-degree-info"]/h4/text()')[0]
             course = Course(name,brief,satisfaction)
-            print course
+            with open('./result.txt',"a+") as code:
+                code.write(str(course))
         except:
             print "Unexist Courses"
 
@@ -29,9 +30,9 @@ class Course:
         "\nBrief: " + 
         self.brief.encode("UTF-8") +
         "\nStaisfaction: " +
-        self.satisfaction.encode("UTF-8"))
+        self.satisfaction.encode("UTF-8")) + "\n\n"
 crawer = CourseCrawler()
-for id in range (100,500):
+for id in range (1,1000):
     print id
     crawer.getCourseFromUrl("http://www.imooc.com/view/"+repr(id))
     time.sleep(3)
