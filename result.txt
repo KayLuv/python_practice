@@ -539,3 +539,11 @@ Name: jQuery源码解析（架构与依赖模块）
 Brief: 本课程是目前真正意义上第一部完整的jQuery 2.1.1版本源码课程，课程分14章，先从整体入手理解架构，再逐个攻破每个依赖模块包括回调函数、异步加载、数据缓存、动画队列等。最后整合分析选择器、DOM处理、事件、AJAX、动画模块。
 Staisfaction: 7.0
 
+Name: 按钮特效
+Brief: 课程分为二个实例讲解，第一个实例用纯CSS3代替JavaScript实现按钮动画效果，并详细讲解CSS3新增的transition、transform等属性。第二个实例重点介绍利用<a>标签制作自适应宽度的圆角按钮。
+Staisfaction: 10.0
+
+Name: 按钮特效
+Brief: 课程分为二个实例讲解，第一个实例用纯CSS3代替JavaScript实现按钮动画效果，并详细讲解CSS3新增的transition、transform等属性。第二个实例重点介绍利用<a>标签制作自适应宽度的圆角按钮。
+Staisfaction: 10.0
+
