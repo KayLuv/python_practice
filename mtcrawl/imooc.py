@@ -2,7 +2,8 @@
 from lxml import html
 import requests
 import time
-from myThread import MyThread
+import threading
+tLock = threading.Lock()
 class CourseCrawler:
 
     def getCourseFromUrl(self,link):
@@ -32,20 +33,26 @@ class Course:
         "\nStaisfaction: " +
         self.satisfaction.encode("UTF-8")) + "\n\n"
 crawer = CourseCrawler()
-def crawler():
-    for id in range (1,1000):
-        print id
-        crawer.getCourseFromUrl("http://www.imooc.com/view/"+repr(id))
-        time.sleep(3)
+def crawler(id):
+    print id
+    crawer.getCourseFromUrl("http://www.imooc.com/view/"+id)
+    time.sleep(3)
 def main():
     print '*** Starting crawler ***'
-    threads = []
-    for i in range(10):
-        t = MyThread(crawler,())
-        threads.append(t)
-    for i in range(10):
-        threads[i].start()
-    for i in range(10):
-        threads[i].join()
+    try:
+        for id in xrange(100):
+            threads = []
+            for i in range(10):
+                t = threading.Thread(target = crawler,args = (str(i+10*id),))
+                threads.append(t)
+            for t in threads:
+                t.start()
+            for t in threads:
+                t.join()
+    except:
+        pass
+    print '*** crawler End ***'
 if __name__ == '__main__':
     main()
+
+
