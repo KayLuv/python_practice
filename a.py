@@ -1,7 +1,7 @@
-# import math
-# print(int(math.floor(32.9)))
-# print(int(math.ceil(32.9)))
-# print(int(round(32.9)))
+# coding: utf-8
+"""
+cmath library test.
+"""
 
 import cmath
 print(cmath.sqrt(-1))
